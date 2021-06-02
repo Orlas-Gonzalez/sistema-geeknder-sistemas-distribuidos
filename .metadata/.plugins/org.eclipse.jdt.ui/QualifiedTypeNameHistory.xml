@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="de.javasoft.synthetica.dark.SyntheticaDarkLookAndFeel"/>
+    <fullyQualifiedTypeName name="javax.swing.UIManager"/>
+    <fullyQualifiedTypeName name="de.javasoft.plaf.synthetica.SyntheticaLookAndFeel"/>
+    <fullyQualifiedTypeName name="com.formdev.flatlaf.FlatLightLaf"/>
+    <fullyQualifiedTypeName name="com.formdev.flatlaf.FlatDarkLaf"/>
+    <fullyQualifiedTypeName name="com.formdev.flatlaf.intellijthemes.FlatGradiantoDarkFuchsiaIJTheme"/>
+</qualifiedTypeNameHistroy>
