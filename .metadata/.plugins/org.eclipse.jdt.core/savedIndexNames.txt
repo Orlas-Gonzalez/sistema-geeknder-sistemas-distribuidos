@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 INDEX VERSION 1.131+C:\UAQTESTS\geeknder-application-java\sistema-geeknder-sistemas-distribuidos\.metadata\.plugins\org.eclipse.jdt.core
 3127725697.index
 1692889960.index
 8400778.index
+=======
+INDEX VERSION 1.131+C:\UAQTESTS\geeknder-application-java\.metadata\.plugins\org.eclipse.jdt.core
+933825235.index
+2196199803.index
+756930028.index
+791957165.index
+3127725697.index
+>>>>>>> f08410053b918f49c5c7651f99bae4dca808029a

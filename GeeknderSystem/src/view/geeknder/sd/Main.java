@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+import com.formdev.flatlaf.intellijthemes.FlatGradiantoDarkFuchsiaIJTheme;
+
 @SuppressWarnings("serial")
 public class Main extends JFrame {
 
@@ -20,7 +22,8 @@ public class Main extends JFrame {
 		try {
 			//UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
 			//UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
-			UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
+			//UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
+			UIManager.setLookAndFeel(new FlatGradiantoDarkFuchsiaIJTheme());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
