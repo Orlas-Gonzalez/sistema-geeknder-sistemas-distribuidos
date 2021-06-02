@@ -51,7 +51,7 @@ public class TestLookAndFeel extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Hola como estas perra");
-		btnNewButton.setBounds(111, 104, 199, 37);
+		btnNewButton.setBounds(111, 104, 199, 38);
 		contentPane.add(btnNewButton);
 	}
 }
