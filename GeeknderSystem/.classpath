@@ -6,7 +6,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/GeeknderSources/Libraries/flatlaf-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/GeeknderSources/Libraries/flatlaf-intellij-themes-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/sistema-geeknder-sistemas-distribuidos/GeeknderSources/Libraries/flatlaf-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/sistema-geeknder-sistemas-distribuidos/GeeknderSources/Libraries/flatlaf-intellij-themes-1.2.jar"/>
+	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
+	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

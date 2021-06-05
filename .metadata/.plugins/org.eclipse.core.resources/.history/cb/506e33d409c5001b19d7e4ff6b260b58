@@ -1,0 +1,378 @@
+package view.geeknder.sd;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+
+import com.formdev.flatlaf.intellijthemes.FlatGradiantoMidnightBlueIJTheme;
+
+import controller.geeknder.sd.the_hub_geeknder;
+
+import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JScrollPane;
+import javax.swing.border.CompoundBorder;
+import javax.swing.JTextPane;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.JRadioButton;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.FormSpecs;
+import com.jgoodies.forms.layout.RowSpec;
+
+
+
+
+@SuppressWarnings("serial")
+public class Signup extends JFrame {
+	
+	
+	private JPanel contentPane;
+	
+	private static the_hub_geeknder th = new the_hub_geeknder();
+
+	private JTextField txtNickname;
+	private JLabel lbl_User;
+	private JLabel lbl_User_1;
+//	private JLabel lbl_icon_logo;
+	private JLabel lbl_Password;
+//	private JLabel lbl_icon_pass;
+	private JLabel lbl_Inicio;
+	private JLabel lbl_Div;
+	private JScrollPane scrollPane;
+	private JPanel panel;
+	private JPasswordField passwordField;
+	private JTextField textCorreo;
+	private JTextField textEdad;
+	private JLabel lbl_Avatar;
+	private JTextField textAvatar;
+	private JLabel lbl_About;
+	private JTextField textAbout;
+	private JScrollPane scrollPane_1;
+	private JPanel panel_1;
+	private JLabel lbl_Password_2;
+	private JLabel lbl_Ciudad;
+	private JScrollPane scrollPane_3;
+	private JTextField textCiudad;
+	private JButton btnAvatar;
+	private JLabel lbl_Intereses;
+	private JTextField textField;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
+	private JButton btnNewButton_3;
+	private JButton btnNewButton_4;
+	private JLabel lbl_Ocupacion;
+	private JTextField textOcupacion;
+	private JLabel lbl_Ciudad_1;
+	private JRadioButton rdbtnNewRadioButton;
+	private JRadioButton rdbtnNewRadioButton_1;
+//	private JLabel lbl_Singup;
+	
+	
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(new FlatGradiantoMidnightBlueIJTheme());
+			UIManager.put( "TextComponent.arc", 999 );
+			UIManager.put( "Button.arc", 999);
+			UIManager.put( "Component.focusWidth", 1 );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Signup frame = new Signup();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Signup() {
+		setTitle("Sign Up - Geeknder");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Signup.class.getResource("/images/geeknder/sd/icon_geek.png")));
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 848, 480);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(-12, 0, 999, 446);
+		contentPane.add(scrollPane_1);
+		
+		panel = new JPanel();
+		scrollPane_1.setViewportView(panel);
+		panel.setLayout(null);
+		
+		scrollPane_3 = new JScrollPane();
+		scrollPane_3.setBounds(227, 0, 616, 444);
+		panel.add(scrollPane_3);
+		
+		panel_1 = new JPanel();
+		scrollPane_3.setViewportView(panel_1);
+		panel_1.setLayout(new FormLayout(new ColumnSpec[] {
+				FormSpecs.RELATED_GAP_COLSPEC,
+				ColumnSpec.decode("75px"),
+				ColumnSpec.decode("4px"),
+				ColumnSpec.decode("16px"),
+				FormSpecs.LABEL_COMPONENT_GAP_COLSPEC,
+				ColumnSpec.decode("24px"),
+				FormSpecs.LABEL_COMPONENT_GAP_COLSPEC,
+				ColumnSpec.decode("25px"),
+				FormSpecs.LABEL_COMPONENT_GAP_COLSPEC,
+				ColumnSpec.decode("36px"),
+				FormSpecs.LABEL_COMPONENT_GAP_COLSPEC,
+				ColumnSpec.decode("26px"),
+				FormSpecs.LABEL_COMPONENT_GAP_COLSPEC,
+				ColumnSpec.decode("29px"),
+				FormSpecs.LABEL_COMPONENT_GAP_COLSPEC,
+				ColumnSpec.decode("63px"),},
+			new RowSpec[] {
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				RowSpec.decode("54px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("30px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("20px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("25px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("14px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("25px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("20px"),
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				RowSpec.decode("23px"),
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				RowSpec.decode("14px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("23px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("14px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("23px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("14px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("23px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("14px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("23px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("14px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("23px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("14px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("25px"),
+				FormSpecs.PARAGRAPH_GAP_ROWSPEC,
+				RowSpec.decode("1px"),
+				FormSpecs.UNRELATED_GAP_ROWSPEC,
+				RowSpec.decode("30px"),
+				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
+				RowSpec.decode("14px"),}));
+		
+		
+		
+		
+		txtNickname = new JTextField();
+		panel_1.add(txtNickname, "2, 4, 15, 1, fill, fill");
+		txtNickname.putClientProperty("JTextField.placeholderText", "             Crear Usuario Geeknder");
+		txtNickname.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		txtNickname.setHorizontalAlignment(SwingConstants.CENTER);
+		txtNickname.setBackground(Color.decode("#35354b"));
+		txtNickname.setColumns(10);
+		
+		lbl_User_1 = new JLabel("    Usuario Geeknder");
+		panel_1.add(lbl_User_1, "2, 2, 3, 1, left, bottom");
+		lbl_User_1.setFont(new Font("Gameplay", Font.PLAIN, 10));
+		
+		lbl_User = new JLabel("Únete a Geeknder");
+		panel_1.add(lbl_User, "6, 2, 5, 1, center, fill");
+		lbl_User.setFont(new Font("Gameplay", Font.PLAIN, 20));
+		
+
+		
+		lbl_Password = new JLabel("    Correo");
+		panel_1.add(lbl_Password, "2, 6, left, fill");
+		lbl_Password.setFont(new Font("Gameplay", Font.PLAIN, 10));
+		
+		textEdad = new JTextField();
+		panel_1.add(textEdad, "2, 16, 15, 1, fill, center");
+		textEdad.setHorizontalAlignment(SwingConstants.CENTER);
+		textEdad.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textEdad.setColumns(10);
+		textEdad.setBackground(new Color(53, 53, 75));
+		
+		lbl_Avatar = new JLabel("    Avatar");
+		panel_1.add(lbl_Avatar, "2, 18, left, fill");
+		lbl_Avatar.setFont(new Font("Dialog", Font.PLAIN, 10));
+		
+		textAvatar = new JTextField();
+		panel_1.add(textAvatar, "2, 20, 11, 1, fill, top");
+		textAvatar.setHorizontalAlignment(SwingConstants.CENTER);
+		textAvatar.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textAvatar.setColumns(10);
+		textAvatar.setBackground(new Color(53, 53, 75));
+		
+		lbl_About = new JLabel("    Acerca de mi ");
+		panel_1.add(lbl_About, "2, 22, 2, 1, left, bottom");
+		lbl_About.setFont(new Font("Dialog", Font.PLAIN, 10));
+		
+		textAbout = new JTextField();
+		panel_1.add(textAbout, "2, 24, 15, 1, fill, fill");
+		textAbout.setHorizontalAlignment(SwingConstants.CENTER);
+		textAbout.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textAbout.setColumns(10);
+		textAbout.setBackground(new Color(53, 53, 75));
+		
+		lbl_Ciudad = new JLabel("    Ciudad");
+		lbl_Ciudad.setFont(new Font("Dialog", Font.PLAIN, 10));
+		panel_1.add(lbl_Ciudad, "2, 26, left, top");
+		
+		textCiudad = new JTextField();
+		textCiudad.setHorizontalAlignment(SwingConstants.CENTER);
+		textCiudad.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textCiudad.setColumns(10);
+		textCiudad.setBackground(new Color(53, 53, 75));
+		panel_1.add(textCiudad, "2, 28, 15, 1, fill, top");
+		
+		lbl_Ciudad_1 = new JLabel("   Genero");
+		lbl_Ciudad_1.setFont(new Font("Dialog", Font.PLAIN, 10));
+		panel_1.add(lbl_Ciudad_1, "2, 30, left, top");
+		
+		rdbtnNewRadioButton = new JRadioButton("Femenino");
+		panel_1.add(rdbtnNewRadioButton, "2, 32, left, top");
+		
+		lbl_Ocupacion = new JLabel("    Ocupaci\u00F3n");
+		lbl_Ocupacion.setFont(new Font("Dialog", Font.PLAIN, 10));
+		panel_1.add(lbl_Ocupacion, "2, 34, left, top");
+		
+		textOcupacion = new JTextField();
+		textOcupacion.setHorizontalAlignment(SwingConstants.CENTER);
+		textOcupacion.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textOcupacion.setColumns(10);
+		textOcupacion.setBackground(new Color(53, 53, 75));
+		panel_1.add(textOcupacion, "2, 36, 15, 1, fill, top");
+		
+		lbl_Intereses = new JLabel("    Intereses");
+		lbl_Intereses.setFont(new Font("Dialog", Font.PLAIN, 10));
+		panel_1.add(lbl_Intereses, "2, 38, left, top");
+		
+		btnNewButton = new JButton("Warzone");
+		panel_1.add(btnNewButton, "2, 40, left, bottom");
+		
+		btnNewButton_1 = new JButton("Fornaite");
+		panel_1.add(btnNewButton_1, "4, 40, 3, 1, left, bottom");
+		
+		btnNewButton_2 = new JButton("Halo");
+		panel_1.add(btnNewButton_2, "8, 40, left, bottom");
+		
+		btnNewButton_3 = new JButton("Apex");
+		panel_1.add(btnNewButton_3, "10, 40, left, bottom");
+		
+		btnNewButton_4 = new JButton("Mario");
+		panel_1.add(btnNewButton_4, "12, 40, 3, 1, left, bottom");
+		
+		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textField.setColumns(10);
+		textField.setBackground(new Color(53, 53, 75));
+		panel_1.add(textField, "16, 40, fill, top");
+		
+		lbl_Password_2 = new JLabel("");
+		lbl_Password_2.setFont(new Font("Dialog", Font.PLAIN, 10));
+		panel_1.add(lbl_Password_2, "2, 42, left, top");
+		
+		JButton btnLogin = new JButton("Crear Usuario");
+		panel_1.add(btnLogin, "2, 44, 15, 1, fill, fill");
+		btnLogin.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		
+		lbl_Inicio = new JLabel("Iniciar Sesi\u00F3n");
+		panel_1.add(lbl_Inicio, "8, 46, 3, 1, center, top");
+		lbl_Inicio.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lbl_Inicio.setForeground(Color.decode("#ff004e"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lbl_Inicio.setForeground(Color.WHITE);
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Main sp = new Main();
+				th.center_Screen(sp);
+				sp.setVisible(true);
+				Signup.this.setVisible(false);
+			}
+		});
+		lbl_Inicio.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 11));
+		
+		JLabel lbl_Password_1 = new JLabel("    Password");
+		panel_1.add(lbl_Password_1, "2, 10, left, top");
+		lbl_Password_1.setFont(new Font("Dialog", Font.PLAIN, 10));
+		
+		passwordField = new JPasswordField();
+		panel_1.add(passwordField, "2, 12, 15, 1, fill, fill");
+		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
+		passwordField.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		passwordField.setBackground(new Color(53, 53, 75));
+		
+		textCorreo = new JTextField();
+		panel_1.add(textCorreo, "2, 8, 15, 1, fill, fill");
+		textCorreo.setHorizontalAlignment(SwingConstants.CENTER);
+		textCorreo.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textCorreo.setColumns(10);
+		textCorreo.setBackground(new Color(53, 53, 75));
+		
+		JLabel lbl_Edad = new JLabel("    Edad");
+		panel_1.add(lbl_Edad, "2, 14, left, fill");
+		lbl_Edad.setFont(new Font("Dialog", Font.PLAIN, 10));
+		
+		btnAvatar = new JButton("Cargar Imagen");
+		panel_1.add(btnAvatar, "14, 20, 3, 1, center, top");
+		
+		rdbtnNewRadioButton_1 = new JRadioButton("Masculino");
+		panel_1.add(rdbtnNewRadioButton_1, "3, 32, 4, 1, left, top");
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(835, 900, 2, 441);
+		scrollPane.setViewportBorder(new CompoundBorder());
+		scrollPane.setToolTipText("");
+		contentPane.add(scrollPane);
+		
+		lbl_Div = new JLabel("|");
+		lbl_Div.setBounds(60, 148, 160, 198);
+		contentPane.add(lbl_Div);
+		lbl_Div.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 11));
+		
+	}
+}
