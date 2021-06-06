@@ -118,9 +118,6 @@ public class Signup extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Signup() {
 		setTitle("Sign Up - Geeknder");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Signup.class.getResource("/images/geeknder/sd/icon_geek.png")));
