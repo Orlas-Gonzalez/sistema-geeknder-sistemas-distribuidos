@@ -1,7 +1,6 @@
 package view.geeknder.sd;
 
 import java.awt.Color;
-import java.awt.*;
 import java.awt.EventQueue;
 import java.awt.Font;
 
@@ -16,8 +15,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
 import com.formdev.flatlaf.intellijthemes.FlatGradiantoMidnightBlueIJTheme;
 
 import controller.geeknder.sd.the_hub_geeknder;
@@ -42,7 +39,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 
 
 
@@ -187,10 +183,7 @@ public class Signup extends JFrame {
 		gbc_lbl_User_1.gridy = 2;
 		panel_1.add(lbl_User_1, gbc_lbl_User_1);
 		lbl_User_1.setFont(new Font("Gameplay", Font.PLAIN, 10));
-		ImageIcon icono =new ImageIcon(getClass().getResource("/images/geeknder/sd/logo.png"));
-		
-		
-		
+		//ImageIcon icono =new ImageIcon(getClass().getResource("/images/geeknder/sd/logo.png"));
 		
 		txtNickname = new JTextField();
 		GridBagConstraints gbc_txtNickname = new GridBagConstraints();
@@ -396,8 +389,8 @@ public class Signup extends JFrame {
 		gbc_lbl_Ocupacion.gridy = 17;
 		panel_1.add(lbl_Ocupacion, gbc_lbl_Ocupacion);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Solo videojuegos", "Estudio", "Trabajo", "Hogar"}));
+		JComboBox<Object> comboBox = new JComboBox<Object>();
+		comboBox.setModel(new DefaultComboBoxModel<Object>(new String[] {"Solo videojuegos", "Estudio", "Trabajo", "Hogar"}));
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.gridwidth = 5;
 		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
@@ -569,10 +562,3 @@ public class Signup extends JFrame {
 	
 	
 }
-
-
-
-
-
-
-
