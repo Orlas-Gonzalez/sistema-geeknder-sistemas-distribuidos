@@ -1,0 +1,78 @@
+package view.geeknder.sd;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+
+import com.formdev.flatlaf.intellijthemes.FlatGradiantoMidnightBlueIJTheme;
+import javax.swing.BoxLayout;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+
+public class Geekder_interfaz extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(new FlatGradiantoMidnightBlueIJTheme());
+			UIManager.put( "TextComponent.arc", 999 );
+			UIManager.put( "Button.arc", 999);
+			UIManager.put( "Component.focusWidth", 1 );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Geekder_interfaz frame = new Geekder_interfaz();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Geekder_interfaz() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/images/geeknder/sd/icon_geek.png")));
+		setTitle("Geeknder");
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 848, 480);	
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JTabbedPane tabbed_pstañas = new JTabbedPane(JTabbedPane.TOP);
+		tabbed_pstañas.setBounds(0, 0, 842, 451);
+		contentPane.add(tabbed_pstañas);
+		
+		JPanel Match = new JPanel();
+		tabbed_pstañas.addTab("Match", null, Match, null);
+		Match.setLayout(new BoxLayout(Match, BoxLayout.X_AXIS));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		Match.add(scrollPane);
+		
+		JPanel Chats = new JPanel();
+		tabbed_pstañas.addTab("Chats", null, Chats, null);
+	
+	}
+}

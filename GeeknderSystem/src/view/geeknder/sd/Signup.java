@@ -1,6 +1,6 @@
 package view.geeknder.sd;
 
-import java.awt.Color;
+
 import java.awt.*;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -16,8 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
 import com.formdev.flatlaf.intellijthemes.FlatGradiantoMidnightBlueIJTheme;
 
 import controller.geeknder.sd.the_hub_geeknder;
@@ -25,10 +23,11 @@ import controller.geeknder.sd.the_hub_geeknder;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.swing.border.CompoundBorder;
 
@@ -42,7 +41,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 
 
 
@@ -50,7 +48,6 @@ import javax.swing.ImageIcon;
 
 @SuppressWarnings("serial")
 public class Signup extends JFrame {
-	
 	
 	private JPanel contentPane;
 	
@@ -74,9 +71,8 @@ public class Signup extends JFrame {
 	private JScrollPane scrollPane_1;
 	private JPanel panel_1;
 	private JLabel lbl_Password_2;
-	private JLabel lbl_Ciudad;
-	private JScrollPane scrollPane_3;
-	private JTextField textCiudad;
+	private JScrollPane scrollPane_Geek;
+	private JTextField textAbout;
 	private JButton btnAvatar;
 	private JLabel lbl_Intereses;
 	private JButton btnNewButton;
@@ -86,19 +82,20 @@ public class Signup extends JFrame {
 	private JButton btnNewButton_4;
 	private JLabel lbl_Ocupacion;
 	private JLabel lbl_Genero;
-	private JRadioButton rdbtnNewRadioButton;
-	private JRadioButton rdbtnNewRadioButton_1;
+	private JRadioButton rdbtnFemenino;
+	private JRadioButton rdbtnMasculino;
 	private JButton btnNewButton_5;
 	private JButton btnNewButton_6;
 	private JButton btnNewButton_7;
 
 	private JLabel lblfoto;
-	private JTextField textField;
+	private JTextField textCity;
 	private JLabel lbl_About_1;
 //	private JLabel lbl_Singup;
 	
 	
 	File fichero;
+	private JLabel lbl_City;
 	
 	
 	public static void main(String[] args) {
@@ -144,16 +141,16 @@ public class Signup extends JFrame {
 		scrollPane_1.setViewportView(panel);
 		panel.setLayout(null);
 		
-		scrollPane_3 = new JScrollPane();
-		scrollPane_3.setBounds(29, 41, 814, 431);
-		panel.add(scrollPane_3);
+		scrollPane_Geek = new JScrollPane();
+		scrollPane_Geek.setBounds(34, 48, 814, 438);
+		panel.add(scrollPane_Geek);
 		
 		panel_1 = new JPanel();
-		scrollPane_3.setViewportView(panel_1);
+		scrollPane_Geek.setViewportView(panel_1);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
-		gbl_panel_1.columnWidths = new int[]{95, 77, 94, 90, 0, 10, 4, 16, 0, 44, 44, 65, 33, 27, 0};
-		gbl_panel_1.rowHeights = new int[]{108, 19, 16, 30, 20, 25, 14, 25, 20, 23, 14, 23, 38, 14, 23, 14, 23, 14, 23, 14, 25, 0, 1, 30, 0, 0, 14, 0};
-		gbl_panel_1.columnWeights = new double[]{1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_1.columnWidths = new int[]{30, 108, 94, 86, 0, 10, 62, 13, 44, 44, 65, 33, 27, 0};
+		gbl_panel_1.rowHeights = new int[]{108, 19, 16, 30, 20, 25, 14, 25, 20, 23, 27, 16, 38, 0, 23, 14, 23, 14, 23, 14, 25, 0, 1, 30, 0, 0, 14, 0};
+		gbl_panel_1.columnWeights = new double[]{1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_1.setLayout(gbl_panel_1);
 		
@@ -161,7 +158,7 @@ public class Signup extends JFrame {
 		lbl_logo.setBounds(244, 22, 340, 183);
 		lbl_logo.setIcon(th.set_Icon_Label("/images/geeknder/sd/logo.png", lbl_logo, 200, 90));
 		GridBagConstraints gbc_lbl_logo = new GridBagConstraints();
-		gbc_lbl_logo.gridwidth = 5;
+		gbc_lbl_logo.gridwidth = 4;
 		gbc_lbl_logo.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_logo.gridx = 3;
 		gbc_lbl_logo.gridy = 0;
@@ -172,7 +169,7 @@ public class Signup extends JFrame {
 		GridBagConstraints gbc_lbl_User = new GridBagConstraints();
 		gbc_lbl_User.fill = GridBagConstraints.VERTICAL;
 		gbc_lbl_User.insets = new Insets(0, 0, 5, 5);
-		gbc_lbl_User.gridwidth = 5;
+		gbc_lbl_User.gridwidth = 4;
 		gbc_lbl_User.gridx = 3;
 		gbc_lbl_User.gridy = 1;
 		panel_1.add(lbl_User, gbc_lbl_User);
@@ -187,7 +184,6 @@ public class Signup extends JFrame {
 		gbc_lbl_User_1.gridy = 2;
 		panel_1.add(lbl_User_1, gbc_lbl_User_1);
 		lbl_User_1.setFont(new Font("Gameplay", Font.PLAIN, 10));
-		ImageIcon icono =new ImageIcon(getClass().getResource("/images/geeknder/sd/logo.png"));
 		
 		
 		
@@ -196,11 +192,11 @@ public class Signup extends JFrame {
 		GridBagConstraints gbc_txtNickname = new GridBagConstraints();
 		gbc_txtNickname.fill = GridBagConstraints.BOTH;
 		gbc_txtNickname.insets = new Insets(0, 0, 5, 5);
-		gbc_txtNickname.gridwidth = 5;
+		gbc_txtNickname.gridwidth = 4;
 		gbc_txtNickname.gridx = 3;
 		gbc_txtNickname.gridy = 3;
 		panel_1.add(txtNickname, gbc_txtNickname);
-		txtNickname.putClientProperty("JTextField.placeholderText", "                      Crear un usuario");
+		txtNickname.putClientProperty("JTextField.placeholderText", "                        Crear un usuario");
 		txtNickname.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
 		txtNickname.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNickname.setBackground(Color.decode("#35354b"));
@@ -221,10 +217,10 @@ public class Signup extends JFrame {
 		
 		textCorreo = new JTextField();
 		GridBagConstraints gbc_textCorreo = new GridBagConstraints();
-		textCorreo.putClientProperty("JTextField.placeholderText", "                     Ingrese su correo");
+		textCorreo.putClientProperty("JTextField.placeholderText", "                        Ingrese su correo");
 		gbc_textCorreo.fill = GridBagConstraints.BOTH;
 		gbc_textCorreo.insets = new Insets(0, 0, 5, 5);
-		gbc_textCorreo.gridwidth = 5;
+		gbc_textCorreo.gridwidth = 4;
 		gbc_textCorreo.gridx = 3;
 		gbc_textCorreo.gridy = 5;
 		panel_1.add(textCorreo, gbc_textCorreo);
@@ -244,20 +240,16 @@ public class Signup extends JFrame {
 		
 		passwordField = new JPasswordField();
 		GridBagConstraints gbc_passwordField = new GridBagConstraints(); 
-		passwordField.putClientProperty("JTextField.placeholderText", "                    Crear Constraseña");
+		passwordField.putClientProperty("JTextField.placeholderText", "                       Crear Constraseña");
 		gbc_passwordField.fill = GridBagConstraints.BOTH;
 		gbc_passwordField.insets = new Insets(0, 0, 5, 5);
-		gbc_passwordField.gridwidth = 5;
+		gbc_passwordField.gridwidth = 4;
 		gbc_passwordField.gridx = 3;
 		gbc_passwordField.gridy = 7;
 		panel_1.add(passwordField, gbc_passwordField);
 		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
 		passwordField.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
 		passwordField.setBackground(new Color(53, 53, 75));
-		
-		textEdad = new JTextField();
-		GridBagConstraints gbc_textEdad = new GridBagConstraints();
-		textEdad.putClientProperty("JTextField.placeholderText", "   Ingrese su edad");
 		
 		lbl_Avatar = new JLabel("    Avatar");
 		GridBagConstraints gbc_lbl_Avatar = new GridBagConstraints();
@@ -276,19 +268,9 @@ public class Signup extends JFrame {
 		GridBagConstraints gbc_lbl_About_1 = new GridBagConstraints();
 		gbc_lbl_About_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_About_1.anchor = GridBagConstraints.EAST;
-		gbc_lbl_About_1.gridx = 5;
+		gbc_lbl_About_1.gridx = 4;
 		gbc_lbl_About_1.gridy = 9;
 		panel_1.add(lbl_About_1, gbc_lbl_About_1);
-		gbc_textEdad.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textEdad.insets = new Insets(0, 0, 5, 5);
-		gbc_textEdad.gridwidth = 2;
-		gbc_textEdad.gridx = 6;
-		gbc_textEdad.gridy = 9;
-		panel_1.add(textEdad, gbc_textEdad);
-		textEdad.setHorizontalAlignment(SwingConstants.CENTER);
-		textEdad.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
-		textEdad.setColumns(10);
-		textEdad.setBackground(new Color(53, 53, 75));
 		
 		lblfoto = new JLabel("Imagen");
 		GridBagConstraints gbc_lblfoto = new GridBagConstraints();
@@ -302,32 +284,47 @@ public class Signup extends JFrame {
 		btnAvatar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				lblfoto.setText(abrirArchivo());				
+				abrirArchivo();				
 			}
 		});
 		
-		lbl_About = new JLabel("Sobre mi ");
-		GridBagConstraints gbc_lbl_About = new GridBagConstraints();
-		gbc_lbl_About.anchor = GridBagConstraints.SOUTHEAST;
-		gbc_lbl_About.insets = new Insets(0, 0, 5, 5);
-		gbc_lbl_About.gridx = 5;
-		gbc_lbl_About.gridy = 11;
-		panel_1.add(lbl_About, gbc_lbl_About);
-		lbl_About.setFont(new Font("Dialog", Font.PLAIN, 10));
+		textEdad = new JTextField();
+		GridBagConstraints gbc_textEdad = new GridBagConstraints();
+		gbc_textEdad.gridwidth = 2;
+		textEdad.putClientProperty("JTextField.placeholderText", "   Ingrese su edad");
+		gbc_textEdad.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textEdad.insets = new Insets(0, 0, 5, 5);
+		gbc_textEdad.gridx = 5;
+		gbc_textEdad.gridy = 9;
+		panel_1.add(textEdad, gbc_textEdad);
+		textEdad.setHorizontalAlignment(SwingConstants.CENTER);
+		textEdad.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textEdad.setColumns(10);
+		textEdad.setBackground(new Color(53, 53, 75));
 		
-		textField = new JTextField();
-		textField.putClientProperty("JTextField.placeholderText", "      Descripción");
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
-		textField.setColumns(10);
-		textField.setBackground(new Color(53, 53, 75));
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.gridwidth = 2;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 6;
-		gbc_textField.gridy = 11;
-		panel_1.add(textField, gbc_textField);
+		lbl_City = new JLabel("Ciudad");
+		lbl_City.setVerticalAlignment(SwingConstants.BOTTOM);
+		lbl_City.setFont(new Font("Dialog", Font.PLAIN, 10));
+		GridBagConstraints gbc_lbl_City = new GridBagConstraints();
+		gbc_lbl_City.insets = new Insets(0, 0, 5, 5);
+		gbc_lbl_City.gridx = 4;
+		gbc_lbl_City.gridy = 11;
+		panel_1.add(lbl_City, gbc_lbl_City);
+		
+		textCity = new JTextField();
+		textCity.putClientProperty("JTextField.placeholderText", "    Ciduad actual");
+		textCity.setHorizontalAlignment(SwingConstants.CENTER);
+		textCity.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textCity.setColumns(10);
+		textCity.setBackground(new Color(53, 53, 75));
+		
+		GridBagConstraints gbc_textCity = new GridBagConstraints();
+		gbc_textCity.gridwidth = 2;
+		gbc_textCity.insets = new Insets(0, 0, 5, 5);
+		gbc_textCity.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textCity.gridx = 5;
+		gbc_textCity.gridy = 11;
+		panel_1.add(textCity, gbc_textCity);
 		GridBagConstraints gbc_btnAvatar = new GridBagConstraints();
 		gbc_btnAvatar.anchor = GridBagConstraints.NORTH;
 		gbc_btnAvatar.insets = new Insets(0, 0, 5, 5);
@@ -335,30 +332,28 @@ public class Signup extends JFrame {
 		gbc_btnAvatar.gridy = 12;
 		panel_1.add(btnAvatar, gbc_btnAvatar);
 		
-		lbl_Ciudad = new JLabel("    Ciudad");
-		lbl_Ciudad.setFont(new Font("Dialog", Font.PLAIN, 10));
-		GridBagConstraints gbc_lbl_Ciudad = new GridBagConstraints();
-		gbc_lbl_Ciudad.gridwidth = 5;
-		gbc_lbl_Ciudad.anchor = GridBagConstraints.NORTHWEST;
-		gbc_lbl_Ciudad.insets = new Insets(0, 0, 5, 5);
-		gbc_lbl_Ciudad.gridx = 3;
-		gbc_lbl_Ciudad.gridy = 13;
-		panel_1.add(lbl_Ciudad, gbc_lbl_Ciudad);
+		textAbout = new JTextField(); 
+		textAbout.putClientProperty("JTextField.placeholderText", "                            Descripción");
 		
-		textCiudad = new JTextField();
-		textCiudad.putClientProperty("JTextField.placeholderText", "            Ciudad actualmente viviendo");
-		textCiudad.setHorizontalAlignment(SwingConstants.CENTER);
-		textCiudad.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
-		textCiudad.setColumns(10);
-		textCiudad.setBackground(new Color(53, 53, 75));
-		GridBagConstraints gbc_textCiudad = new GridBagConstraints();
-		gbc_textCiudad.anchor = GridBagConstraints.NORTH;
-		gbc_textCiudad.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textCiudad.insets = new Insets(0, 0, 5, 5);
-		gbc_textCiudad.gridwidth = 5;
-		gbc_textCiudad.gridx = 3;
-		gbc_textCiudad.gridy = 14;
-		panel_1.add(textCiudad, gbc_textCiudad);
+		lbl_About = new JLabel("Sobre mi ");
+		GridBagConstraints gbc_lbl_About = new GridBagConstraints();
+		gbc_lbl_About.insets = new Insets(0, 0, 5, 5);
+		gbc_lbl_About.gridx = 3;
+		gbc_lbl_About.gridy = 13;
+		panel_1.add(lbl_About, gbc_lbl_About);
+		lbl_About.setFont(new Font("Dialog", Font.PLAIN, 10));
+		textAbout.setHorizontalAlignment(SwingConstants.CENTER);
+		textAbout.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
+		textAbout.setColumns(10);
+		textAbout.setBackground(new Color(53, 53, 75));
+		GridBagConstraints gbc_textAbout = new GridBagConstraints();
+		gbc_textAbout.anchor = GridBagConstraints.NORTH;
+		gbc_textAbout.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textAbout.insets = new Insets(0, 0, 5, 5);
+		gbc_textAbout.gridwidth = 4;
+		gbc_textAbout.gridx = 3;
+		gbc_textAbout.gridy = 14;
+		panel_1.add(textAbout, gbc_textAbout);
 		
 		lbl_Genero = new JLabel("   Genero");
 		lbl_Genero.setFont(new Font("Dialog", Font.PLAIN, 10));
@@ -370,22 +365,22 @@ public class Signup extends JFrame {
 		gbc_lbl_Genero.gridy = 15;
 		panel_1.add(lbl_Genero, gbc_lbl_Genero);
 		
-		rdbtnNewRadioButton = new JRadioButton("Femenino");
-		GridBagConstraints gbc_rdbtnNewRadioButton = new GridBagConstraints();
-		gbc_rdbtnNewRadioButton.anchor = GridBagConstraints.NORTHWEST;
-		gbc_rdbtnNewRadioButton.insets = new Insets(0, 0, 5, 5);
-		gbc_rdbtnNewRadioButton.gridx = 3;
-		gbc_rdbtnNewRadioButton.gridy = 16;
-		panel_1.add(rdbtnNewRadioButton, gbc_rdbtnNewRadioButton);
+		rdbtnFemenino = new JRadioButton("Femenino");
+		GridBagConstraints gbc_rdbtnFemenino = new GridBagConstraints();
+		gbc_rdbtnFemenino.anchor = GridBagConstraints.NORTHWEST;
+		gbc_rdbtnFemenino.insets = new Insets(0, 0, 5, 5);
+		gbc_rdbtnFemenino.gridx = 3;
+		gbc_rdbtnFemenino.gridy = 16;
+		panel_1.add(rdbtnFemenino, gbc_rdbtnFemenino);
 		
-		rdbtnNewRadioButton_1 = new JRadioButton("Masculino");
-		GridBagConstraints gbc_rdbtnNewRadioButton_1 = new GridBagConstraints();
-		gbc_rdbtnNewRadioButton_1.anchor = GridBagConstraints.NORTHWEST;
-		gbc_rdbtnNewRadioButton_1.insets = new Insets(0, 0, 5, 5);
-		gbc_rdbtnNewRadioButton_1.gridwidth = 2;
-		gbc_rdbtnNewRadioButton_1.gridx = 5;
-		gbc_rdbtnNewRadioButton_1.gridy = 16;
-		panel_1.add(rdbtnNewRadioButton_1, gbc_rdbtnNewRadioButton_1);
+		rdbtnMasculino = new JRadioButton("Masculino");
+		GridBagConstraints gbc_rdbtnMasculino = new GridBagConstraints();
+		gbc_rdbtnMasculino.anchor = GridBagConstraints.NORTHWEST;
+		gbc_rdbtnMasculino.insets = new Insets(0, 0, 5, 5);
+		gbc_rdbtnMasculino.gridwidth = 2;
+		gbc_rdbtnMasculino.gridx = 5;
+		gbc_rdbtnMasculino.gridy = 16;
+		panel_1.add(rdbtnMasculino, gbc_rdbtnMasculino);
 		
 		lbl_Ocupacion = new JLabel("    Ocupaci\u00F3n");
 		lbl_Ocupacion.setFont(new Font("Dialog", Font.PLAIN, 10));
@@ -399,7 +394,7 @@ public class Signup extends JFrame {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Solo videojuegos", "Estudio", "Trabajo", "Hogar"}));
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.gridwidth = 5;
+		gbc_comboBox.gridwidth = 4;
 		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 3;
@@ -427,21 +422,21 @@ public class Signup extends JFrame {
 		GridBagConstraints gbc_btnNewButton_4 = new GridBagConstraints();
 		gbc_btnNewButton_4.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_btnNewButton_4.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_4.gridx = 5;
+		gbc_btnNewButton_4.gridx = 4;
 		gbc_btnNewButton_4.gridy = 20;
 		panel_1.add(btnNewButton_4, gbc_btnNewButton_4);
 		
 		btnNewButton_5 = new JButton("Halo");
 		GridBagConstraints gbc_btnNewButton_5 = new GridBagConstraints();
 		gbc_btnNewButton_5.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_5.gridx = 6;
+		gbc_btnNewButton_5.gridx = 5;
 		gbc_btnNewButton_5.gridy = 20;
 		panel_1.add(btnNewButton_5, gbc_btnNewButton_5);
 		
 		btnNewButton_6 = new JButton("Halo");
 		GridBagConstraints gbc_btnNewButton_6 = new GridBagConstraints();
 		gbc_btnNewButton_6.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_6.gridx = 7;
+		gbc_btnNewButton_6.gridx = 6;
 		gbc_btnNewButton_6.gridy = 20;
 		panel_1.add(btnNewButton_6, gbc_btnNewButton_6);
 		
@@ -457,7 +452,7 @@ public class Signup extends JFrame {
 		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
 		gbc_btnNewButton_3.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_btnNewButton_3.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_3.gridx = 5;
+		gbc_btnNewButton_3.gridx = 4;
 		gbc_btnNewButton_3.gridy = 21;
 		panel_1.add(btnNewButton_3, gbc_btnNewButton_3);
 		
@@ -465,14 +460,14 @@ public class Signup extends JFrame {
 		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
 		gbc_btnNewButton_2.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_btnNewButton_2.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_2.gridx = 6;
+		gbc_btnNewButton_2.gridx = 5;
 		gbc_btnNewButton_2.gridy = 21;
 		panel_1.add(btnNewButton_2, gbc_btnNewButton_2);
 		
 		btnNewButton_7 = new JButton("Halo");
 		GridBagConstraints gbc_btnNewButton_7 = new GridBagConstraints();
 		gbc_btnNewButton_7.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_7.gridx = 7;
+		gbc_btnNewButton_7.gridx = 6;
 		gbc_btnNewButton_7.gridy = 21;
 		panel_1.add(btnNewButton_7, gbc_btnNewButton_7);
 		
@@ -489,7 +484,7 @@ public class Signup extends JFrame {
 		GridBagConstraints gbc_btnLogin = new GridBagConstraints();
 		gbc_btnLogin.fill = GridBagConstraints.BOTH;
 		gbc_btnLogin.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLogin.gridwidth = 5;
+		gbc_btnLogin.gridwidth = 4;
 		gbc_btnLogin.gridx = 3;
 		gbc_btnLogin.gridy = 23;
 		panel_1.add(btnLogin, gbc_btnLogin);
@@ -538,39 +533,33 @@ public class Signup extends JFrame {
 
 	
 	
-	private String abrirArchivo() {
-		  String aux="";   
-		  String texto="";
-		  try
-		  {
+	private void abrirArchivo() {  
+		  
 		   JFileChooser file=new JFileChooser();
 		   file.showOpenDialog(this);
-		   File abre=file.getSelectedFile();
-		   if(abre!=null)
-		   {     
-		      FileReader archivos=new FileReader(abre);
-		      BufferedReader lee=new BufferedReader(archivos);
-		      while((aux=lee.readLine())!=null)
-		      {
-		         texto+= aux+ "\n";
-		      }
-		         lee.close();
-		    }    
+		   File archivo=file.getSelectedFile();
+		   if(archivo!=null){    
+			try {
+		      String Dest = System.getProperty("user.dir")+ "/bin/Image-Users/" + archivo.getName(); //Cambiar el nombreee
+		      Path Destino = Paths.get(Dest);
+		      String Orig =archivo.getPath();
+		      Path Origen =Paths.get(Orig);
+		      Files.copy(Origen, Destino);	     
+		      lblfoto.setIcon(th.set_Icon_Label("/Image-Users/"+ archivo.getName(), lblfoto, 95, 90));
+		      lblfoto.setText("");
+		    }  catch(IOException ex)
+			   {
+			     JOptionPane.showMessageDialog(null,ex+"" +
+			           "\nNo se ha encontrado el archivo",
+			                 "ADVERTENCIA!!!",JOptionPane.WARNING_MESSAGE);
+			    }  
 		   }
-		   catch(IOException ex)
-		   {
-		     JOptionPane.showMessageDialog(null,ex+"" +
-		           "\nNo se ha encontrado el archivo",
-		                 "ADVERTENCIA!!!",JOptionPane.WARNING_MESSAGE);
-		    }
-		  return texto;//El texto se almacena en el JTextArea
+		 
 		}
 	
 	
 	
 }
-
-
 
 
 
