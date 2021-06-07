@@ -37,6 +37,7 @@ public class Main extends JFrame {
 	private JLabel lbl_Pass_Forgot;
 	private JLabel lbl_Div;
 	private JLabel lbl_Singup;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -77,7 +78,7 @@ public class Main extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lbl_logo = new JLabel("");
-		lbl_logo.setBounds(244, 22, 340, 183);
+		lbl_logo.setBounds(244, 22, 350, 190);
 		lbl_logo.setIcon(th.set_Icon_Label("/images/geeknder/sd/logo.png", lbl_logo, 350, 190));
 		contentPane.add(lbl_logo);
 		
