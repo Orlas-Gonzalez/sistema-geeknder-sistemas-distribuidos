@@ -6,7 +6,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/GeeknderSources/Libraries/flatlaf-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/GeeknderSources/Libraries/flatlaf-intellij-themes-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/sistema-geeknder-sistemas-distribuidos/GeeknderSources/Libraries/com.fasterxml.jackson.databind.jar"/>
+	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/sistema-geeknder-sistemas-distribuidos/GeeknderSources/Libraries/flatlaf-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/sistema-geeknder-sistemas-distribuidos/GeeknderSources/Libraries/flatlaf-intellij-themes-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/sistema-geeknder-sistemas-distribuidos/GeeknderSources/Libraries/gson-2.8.7.jar"/>
+	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/sistema-geeknder-sistemas-distribuidos/GeeknderSources/Libraries/json-20210307.jar"/>
+	<classpathentry kind="lib" path="C:/UAQTESTS/geeknder-application-java/sistema-geeknder-sistemas-distribuidos/GeeknderSources/Libraries/JTattoo-1.6.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

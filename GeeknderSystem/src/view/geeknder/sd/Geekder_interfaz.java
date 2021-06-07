@@ -1,6 +1,5 @@
 package view.geeknder.sd;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 
